@@ -1,0 +1,12 @@
+* {
+	margin:0; padding:0;
+}
+
+body {
+    height: 100vh;
+    background-color: aqua;
+}
+
+.map {
+    background-color: aqua;
+}
