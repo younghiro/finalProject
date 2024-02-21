@@ -1,4 +1,9 @@
 let map;
+let directionsService;
+let directionsRenderer;
+let sourceAutocomplete;
+let desAutocomplete;
+
 
 async function initMap() {
   //@ts-ignore
@@ -15,11 +20,12 @@ async function initMap() {
 
     navigator.geolocation.getCurrentPosition(setLocation, showErr, opt);
 
+
     } 
   else {
       alert("Your broweser can't handle google geolocation function");
     }
-
+  
 }
 
 function setLocation(pos) {
@@ -46,6 +52,17 @@ function setLocation(pos) {
       map: mapObj,
       title: 'Current position',
   });
+
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(mapObj);
+
+  sourceAutocomplete = new google.maps.places.Autocomplete(
+    document.getElementById('source')
+  )
+  desAutocomplete = new google.maps.places.Autocomplete(
+    document.getElementById('des')
+  )
 }
 
 

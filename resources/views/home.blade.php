@@ -17,8 +17,31 @@
 
     </head>
     <body>
+        <div>
+            <h1 class="">navigation app</h1>
+            <div class="containar">
+                <form class="form" action="">
+                    @csrf
+                    <input type="text" class="" placeholder="current location" id="source"><!-- ここに現在地の値 -->
+                    <input type="text" class="" placeholder="destination" id="des">
+                </form> 
+                <button onclick="showRoute()">Get Direction</button>
+            </div>
+            <!-- <form action="/submit" method="POST">
+                @csrf <!-- CSRFトークンを含める -->
+
+                <!-- <label for="name">名前:</label><br>
+                <input type="text" id="name" name="name"><br>
+
+                <label for="email">Eメール:</label><br>
+                <input type="email" id="email" name="email"><br>
+
+                <button type="submit">送信</button>
+            </form> -->
+        </div>
         <div id="map"></div>
         <script src="{{ asset('/js/result.js') }}"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDebRyC5KKR__t48vDf1D9n6ZdToztsES4&callback=initMap"></script>
+        <script src="{{ asset('/js/route.js') }}"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDebRyC5KKR__t48vDf1D9n6ZdToztsES4&libraries=places&callback=initMap"></script>
     </body>
 </html>
