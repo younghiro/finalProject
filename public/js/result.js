@@ -9,21 +9,17 @@ async function initMap() {
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
   
-  // check u can use the geolocation 
+  // check u can use the geolocation API
   if ("geolocation" in navigator) {
-    // Geolocation API
-    var opt = {
-      "enableHighAccuracy": true,
-      "timeout": 10000,
-      "maximumAge": 0,
-    };
-
-    navigator.geolocation.getCurrentPosition(setLocation, showErr, opt);
-
-
+      var opt = {
+        "enableHighAccuracy": true,
+        "timeout": 10000,
+        "maximumAge": 0,
+      };
+      navigator.geolocation.getCurrentPosition(setLocation, showErr, opt);
     } 
   else {
-      alert("Your broweser can't handle google geolocation function");
+      alert("Your broweser can't meet W3C Geolocation standart");
     }
   
 }
@@ -33,18 +29,15 @@ function setLocation(pos) {
   // get latitude and longinitude
   var lat = pos.coords.latitude;
   var lng = pos.coords.longitude;
-  // console.write them
-  // console.log(lat);
-  // console.log(lng);
 
-  // srt up latitude and longinitude
+  // set up latitude and longinitude
   latlng = new google.maps.LatLng(lat, lng);
   map = document.getElementById("map");
   opt = {
       zoom: 13,
       center: latlng,
   };
-  // google map 
+  // show google map on device screen
   mapObj = new google.maps.Map(map, opt);
   // set marker
   marker = new google.maps.Marker({
