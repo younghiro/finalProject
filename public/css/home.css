@@ -5,6 +5,62 @@ body {
   padding: 0;
 }
 
+h1 {
+  text-align: center;
+  color: #3191d1;
+}
+
+.containar {
+  margin: 10px 20px;
+}
+
+.box-design {
+  height: 40px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+
+.form {
+  width: 60%;
+  margin: 20px auto 0px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #4ea2da;
+  border-bottom: 3px solid #4ea2da;
+  border-color: #4ea2da;
+}
+
+.btn:hover {
+  color: #fff;
+  background: #3191d1;
+  border-bottom: 2px solid #3191d1;
+}
+
+btn-shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+@media screen and (max-width:480px) {
+
+  h1 {
+    font-size: 1.8em;
+  }
+  .form { 
+    flex-direction: column;
+  }
+}
+
 #map {
-    height: 100vh;
+    height: 80%;
   }

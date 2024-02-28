@@ -34,11 +34,17 @@ function setLocation(pos) {
   latlng = new google.maps.LatLng(lat, lng);
   map = document.getElementById("map");
   opt = {
-      zoom: 13,
+      zoom: 14,
       center: latlng,
   };
   // show google map on device screen
   mapObj = new google.maps.Map(map, opt);
+  // const transitLayer = new google.maps.TransitLayer();
+  // const trafficLayer = new google.maps.TrafficLayer();
+
+  // trafficLayer.setMap(mapObj);
+  // transitLayer.setMap(mapObj);
+
   // set marker
   marker = new google.maps.Marker({
       position: latlng,
