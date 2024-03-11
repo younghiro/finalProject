@@ -13,16 +13,18 @@
 define('STATION_NUMBER', 6);
 define('START_STATION', 0);
 
-$stations = array('one', 'two', 'three', 'four', 'five', 'six');
+$stations    = array('A', 'B', 'C', 'D', 'E','F');
 
+//adjacencyMatrix
+//Each array has the time from the each station to the data id numbers's stations
 $adjacencyMatrix = array(
-    // 'one', 'two', 'three', 'four', 'five', 'six'
-    array(0, 12, 28, 0, 0, 0),  // from one
-    array(12, 0, 10, 13, 0, 0), // from two
-    array(28, 10, 0, 11, 7, 0), // from three
-    array(0, 13, 11, 0, 0, 9),  // from four
-    array(0, 0, 7, 0, 0, 4),    // from five
-    array(0, 0, 0, 9, 4, 0)     // from six
+    //A', 'B', 'C', 'D', 'E', 'F'
+    array(0, 12, 28, 0, 0, 0),  //from A
+    array(12, 0, 10, 13, 0, 0), //from B
+    array(28, 10, 0, 11, 7, 0), //from C
+    array(0, 13, 11, 0, 0, 9),  //from D
+    array(0, 0, 7, 0, 0, 4),    //from E
+    array(0, 0, 0, 9, 4, 0)     //from F
 );
 
 class MinHeap {
