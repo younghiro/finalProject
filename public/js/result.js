@@ -3,7 +3,7 @@ let directionsService;
 let directionsRenderer;
 let sourceAutocomplete;
 let desAutocomplete;
-
+let polyline;
 
 async function initMap() {
   //@ts-ignore
@@ -39,11 +39,13 @@ function setLocation(pos) {
   };
   // show google map on device screen
   mapObj = new google.maps.Map(map, opt);
-  // const transitLayer = new google.maps.TransitLayer();
-  // const trafficLayer = new google.maps.TrafficLayer();
 
-  // trafficLayer.setMap(mapObj);
-  // transitLayer.setMap(mapObj);
+  //real-time traffic information and transit layer
+  const transitLayer = new google.maps.TransitLayer();
+  const trafficLayer = new google.maps.TrafficLayer();
+
+  trafficLayer.setMap(mapObj);
+  transitLayer.setMap(mapObj);
 
   // set marker
   marker = new google.maps.Marker({
@@ -52,9 +54,6 @@ function setLocation(pos) {
       title: 'Current position',
   });
 
-  directionsService = new google.maps.DirectionsService();
-  directionsRenderer = new google.maps.DirectionsRenderer();
-  directionsRenderer.setMap(mapObj);
 
   sourceAutocomplete = new google.maps.places.Autocomplete(
     document.getElementById('source')

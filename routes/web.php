@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/dijkstra', function () {
+    return view('dijkstra');
+});
+
+Route::get('/dijkstra_priorityQue', function () {
+    return view('dijkstra_priorityQue');
+});
