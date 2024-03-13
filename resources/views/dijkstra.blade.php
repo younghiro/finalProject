@@ -67,7 +67,7 @@ while (true) {
     $fix[$minStation] = true;
 }
 for ($i = 0; $i < STATION_NUMBER; $i++) {
-    echo ($stations[START_STATION] . "→" . $stations[$i] . "：" . $currentCost[$i] . "min");
+    echo ($stations[START_STATION] . "→" . $stations[$i] . "：" . $currentCost[$i]. "min");
     echo '<br>';
 }
 
